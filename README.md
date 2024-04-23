@@ -17,3 +17,7 @@ Kedua program subscriber dan publisher menggunakan URL yang sama `amqp://guest:g
 ![Sending and processing event](images/image2.png)
 
 Setelah menjalankan cargo run di publisher dan subscriber, maka Publisher akan mengirimkan data berupa 5 event ke broker yang diterima oleh Subscriber.
+
+![Monitoring chart based on publisher](images/image3.png)
+
+Spike dalam message rate terjadi karena program publisher dieksekusi berulang kali secara berurutan, mengirimkan sejumlah besar pesan ke broker pesan dalam waktu singkat. Seiring dengan bertambahnya jumlah pesan dalam queue, terjadi lonjakan tajam dalam message rate yang diterima oleh broker.
